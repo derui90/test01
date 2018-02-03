@@ -1,0 +1,51 @@
+<application>
+  <component name="PersistenceGenerationSettings">
+    <option name="addToUnit" value="true" />
+    <option name="entitySuffix" value="" />
+    <option name="generateAnnotations" value="false" />
+    <option name="generateColumnProperties" value="true" />
+    <option name="generateDefaultRelationships" value="true" />
+    <option name="generateSingleXml" value="true" />
+    <option name="ENTITY_SUFFIX" value="" />
+    <option name="GENERATE_ANNOTATIONS" value="false" />
+    <option name="GENERATE_XML" value="true" />
+    <option name="GENERATE_COLUMN_PROPERTIES" value="true" />
+    <option name="ADD_TO_UNIT" value="true" />
+    <option name="GENERATE_DEFAULT_RELATIONSHIPS" value="true" />
+  </component>
+  <component name="RefactoringSettings">
+    <option name="INTRODUCE_FIELD_VISIBILITY" value="private" />
+    <option name="INTRODUCE_LOCAL_CREATE_FINALS" value="false" />
+  </component>
+  <component name="SvnApplicationSettings">
+    <option name="myCheckoutURLs">
+      <list>
+        <option value="https://dengrui-PC:8443/svn/idea/" />
+      </list>
+    </option>
+    <option name="myTypedURLs">
+      <list>
+        <option value="https://dengrui-PC:8443/svn/idea/" />
+        <option value="https://dengrui-pc:8443/svn/idea" />
+        <option value="https://dengrui-PC:8443/svn/idea/trunk" />
+        <option value="https://y:8443/svn/JavaDemo/trunk" />
+        <option value="https://y:8443/svn/day01Java/trunk" />
+        <option value="https://y:8443/svn/JavaDemo/trunk/Hello" />
+      </list>
+    </option>
+    <option name="mySvnCommandLine" value="C:\Program Files\VisualSVN Server\bin\svn.exe" />
+  </component>
+  <component name="SvnBranchMapperManager">
+    <option name="myMapping">
+      <map>
+        <entry key="https://dengrui-pc:8443/svn/idea/trunk/crm/trunk">
+          <value>
+            <set>
+              <option value="E:\03_idea\crm" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</application>

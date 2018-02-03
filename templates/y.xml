@@ -1,0 +1,54 @@
+<templateSet group="y">
+  <template name="page" value="public class PageBean&lt;T&gt; { &#10;/*&#9;商品的列表数据 List&lt;Product&gt; list&#10;&#9;当前页         int curPage&#10;&#9;总页数&#9;&#9;   int sumPage&#10;&#9;总数量&#9;&#9;   int count&#10;&#9;一页显示数量   int curSize:&#10;&#9;*/&#10;&#9;&#10;&#9;private List&lt;T&gt; list;&#10;&#9;private int curPage;&#10;&#9;private int sumPage;&#10;&#9;private int count;&#10;&#9;private int curSize;&#10;&#9;&#10;&#9;public List&lt;T&gt; getList() {&#10;&#9;&#9;return list;&#10;&#9;}&#10;&#9;public void setList(List&lt;T&gt; list) {&#10;&#9;&#9;this.list = list;&#10;&#9;}&#10;&#9;public int getCurPage() {&#10;&#9;&#9;return curPage;&#10;&#9;}&#10;&#9;public void setCurPage(int curPage) {&#10;&#9;&#9;this.curPage = curPage;&#10;&#9;}&#10;&#9;public int getSumPage() {&#10;&#9;&#9;return sumPage;&#10;&#9;}&#10;&#9;public void setSumPage(int sumPage) {&#10;&#9;&#9;this.sumPage = sumPage;&#10;&#9;}&#10;&#9;public int getCount() {&#10;&#9;&#9;return count;&#10;&#9;}&#10;&#9;public void setCount(int count) {&#10;&#9;&#9;this.count = count;&#10;&#9;}&#10;&#9;public int getCurSize() {&#10;&#9;&#9;return curSize;&#10;&#9;}&#10;&#9;public void setCurSize(int curSize) {&#10;&#9;&#9;this.curSize = curSize;&#10;&#9;}&#10;&#10;}" description="创建PageBean" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="path" value="${pageContext.request.contextPath}" description="动态获得项目名" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JSP" value="true" />
+    </context>
+  </template>
+  <template name="hidden" value="input type=&quot;hidden&quot; name=&quot;&quot; value=&quot;&quot;/&gt;" description="创建隐藏字段标签" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+      <option name="JSP" value="true" />
+    </context>
+  </template>
+  <template name="form" value="form  action=&quot;${pageContext.request.contextPath }&quot; method=&quot;post&quot;&gt;&#10;&lt;/form&gt;" description="创建表单" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+      <option name="JSP" value="true" />
+    </context>
+  </template>
+  <template name="one2many" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;!DOCTYPE hibernate-mapping PUBLIC &#10;    &quot;-//Hibernate/Hibernate Mapping DTD 3.0//EN&quot;&#10;    &quot;http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd&quot;&gt;&#10;&lt;hibernate-mapping&gt;&#10;&#9;&lt;class name=&quot;com.itheima.bean.Category&quot; table=&quot;t_category&quot;&gt;&#10;&#9;&#9;&lt;!--一,主键属性  --&gt;&#10;&#9;&#9;&lt;id name=&quot;cid&quot; column=&quot;cid&quot;&gt;&#10;&#9;&#9;&#9;&lt;generator class=&quot;native&quot;&gt;&lt;/generator&gt;&#10;&#9;&#9;&lt;/id&gt;&#10;&#9;&#9;&lt;!-- 二,其它属性 --&gt;&#10;&#9;&#9;&lt;property name=&quot;cname&quot; column=&quot;cname&quot;/&gt;&#10;&#9;&#10;&#9;&#9;&lt;!-- 三,表示和商品的关系 --&gt;&#10;&#9;&#9;&lt;!--3.1 set标签的name属性:多的一方的集合的名字  --&gt;&#10;&#9;&#9;&lt;set name=&quot;products&quot;&gt;&#10;&#9;&#9;&#9;&lt;!--3.2 key的 column表示多的一方外键名 --&gt;&#10;&#9;&#9;&#9;&lt;key column=&quot;cid&quot;/&gt;&#10;&#9;&#9;&#9;&lt;!--3.3 one-to-many的class属性表示多的一方类的全限定名  --&gt;&#10;&#9;&#9;&#9;&lt;one-to-many class=&quot;com.itheima.bean.Product&quot;/&gt;&#10;&#9;&#9;&lt;/set&gt;&#10;&#9;&lt;/class&gt;&#10;&lt;/hibernate-mapping&gt;" description="创建一对多映射文件" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="cfg" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;!DOCTYPE hibernate-mapping PUBLIC &#10;    &quot;-//Hibernate/Hibernate Mapping DTD 3.0//EN&quot;&#10;    &quot;http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd&quot;&gt;&#10;&lt;hibernate-mapping&gt;&#10;&#9;&lt;class name=&quot;com.itheima.bean.Category&quot; table=&quot;t_category&quot;&gt;&#10;&#9;&#9;&lt;!--一,主键属性  --&gt;&#10;&#9;&#9;&lt;id name=&quot;cid&quot; column=&quot;cid&quot;&gt;&#10;&#9;&#9;&#9;&lt;generator class=&quot;native&quot;&gt;&lt;/generator&gt;&#10;&#9;&#9;&lt;/id&gt;&#10;&#9;&#9;&lt;!-- 二,其它属性 --&gt;&#10;&#9;&#9;&lt;property name=&quot;cname&quot; column=&quot;cname&quot;/&gt;&#10;&#9;&#10;&#9;&#9;&lt;!-- 三,表示和商品的关系 --&gt;&#10;&#9;&#9;&lt;!--3.1 set标签的name属性:多的一方的集合的名字  --&gt;&#10;&#9;&#9;&lt;set name=&quot;products&quot;&gt;&#10;&#9;&#9;&#9;&lt;!--3.2 key的 column表示多的一方外键名 --&gt;&#10;&#9;&#9;&#9;&lt;key column=&quot;cid&quot;/&gt;&#10;&#9;&#9;&#9;&lt;!--3.3 one-to-many的class属性表示多的一方类的全限定名  --&gt;&#10;&#9;&#9;&#9;&lt;one-to-many class=&quot;com.itheima.bean.Product&quot;/&gt;&#10;&#9;&#9;&lt;/set&gt;&#10;&#9;&lt;/class&gt;&#10;&lt;/hibernate-mapping&gt;" description="创建Hibernate的主配置文件" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="many2one" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;!DOCTYPE hibernate-mapping PUBLIC &#10;    &quot;-//Hibernate/Hibernate Mapping DTD 3.0//EN&quot;&#10;    &quot;http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd&quot;&gt;&#10;&lt;hibernate-mapping&gt;&#10;&#9;&lt;class name=&quot;com.itheima.bean.Product&quot; table=&quot;t_product&quot;&gt;&#10;&#9;&#9;&lt;!--一,主键属性  --&gt;&#10;&#9;&#9;&lt;id name=&quot;pid&quot; column=&quot;pid&quot;&gt;&#10;&#9;&#9;&#9;&lt;generator class=&quot;native&quot;&gt;&lt;/generator&gt;&#10;&#9;&#9;&lt;/id&gt;&#10;&#9;&#9;&lt;!-- 二,其它属性 --&gt;&#10;&#9;&#9;&lt;property name=&quot;pname&quot; column=&quot;pname&quot;/&gt;&#10;&#9;&#9;&lt;!-- 三,表示和分类的关系 --&gt;&#10;&#9;&#9;&lt;!--3.1name:一的一方对象的名字&#10;&#9;&#9;&#9;  class: 一的一方类的全限定名&#10;&#9;&#9;&#9;  column:外键的名字&#10;&#9;&#9;  --&gt;&#10;&#9;&#9;&lt;many-to-one name=&quot;category&quot; class=&quot;com.itheima.bean.Category&quot; column=&quot;cid&quot;/&gt;&#10;&#9;&lt;/class&gt;&#10;&lt;/hibernate-mapping&gt;" description="创建多对一的映射文件" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="many2many" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;!DOCTYPE hibernate-mapping PUBLIC &#10;    &quot;-//Hibernate/Hibernate Mapping DTD 3.0//EN&quot;&#10;    &quot;http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd&quot;&gt;&#10;&lt;hibernate-mapping&gt;&#10;&#9;&lt;class name=&quot;com.itheima.bean.Course&quot; table=&quot;t_course&quot;&gt;&#10;&#9;&#9;&lt;!--一,主键属性  --&gt;&#10;&#9;&#9;&lt;id name=&quot;cid&quot; column=&quot;cid&quot;&gt;&#10;&#9;&#9;&#9;&lt;generator class=&quot;native&quot;&gt;&lt;/generator&gt;&#10;&#9;&#9;&lt;/id&gt;&#10;&#9;&#9;&lt;!-- 二,其它属性 --&gt;&#10;&#9;&#9;&lt;property name=&quot;cname&quot; column=&quot;cname&quot;/&gt;&#10;&#9;&#10;&#9;&#9;&lt;!-- 三,表示和课程的关系 --&gt;&#10;&#9;&#9;&lt;!--3.1 set标签的name属性:当前类中集合的名字  &#10;&#9;&#9;&#9;table:第三方表名&#10;&#9;&#9;--&gt;&#10;&#9;&#9;&lt;set name=&quot;students&quot; table=&quot;s_c_tab&quot;&gt;&#10;&#9;&#9;&#9;&lt;!--3.2 key的 column表示当前类在中间表中的外键 --&gt;&#10;&#9;&#9;&#9;&lt;key column=&quot;cid&quot;/&gt;&#10;&#9;&#9;&#9;&#9;&lt;!--3.3 many-to-many表示多对多关系&#10;&#9;&#9;&#9;  &#9;&#9;column:表示另一方在中间表中的外键&#10;&#9;&#9;&#9;  &#9;&#9;class:表示另一方类的全限定名&#10;&#9;&#9;&#9;  --&gt;&#10;&#9;&#9;&#9;&lt;many-to-many column=&quot;sid&quot; class=&quot;com.itheima.bean.Student&quot;&gt;&lt;/many-to-many&gt;&#10;&#9;&#9;&lt;/set&gt;&#10;&#9;&lt;/class&gt;&#10;&lt;/hibernate-mapping&gt;" description="创建多对多映射文件" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="que" value="QueryRunner queryRunner = new QueryRunner(C3P0Utils.getDataSource());" description="创建QueryRunner对象" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="test" value="@Test&#10;public void fun01(){&#10;&#10;}" description="创建单元测试" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>
